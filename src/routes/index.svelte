@@ -6,12 +6,12 @@
 <p>Enhance your Website with one of the following Components:</p>
 <div class="grid-components">
 	<div class="card">
-		<a href="/datatable" class="card-body">Datatable</a>
+		<a href="{import.meta.env.VITE_BASE_URL}/datatable" class="card-body">Datatable</a>
 	</div>
 	<div class="card">
-		<a href="/tabs" class="card-body">Tabs</a>
+		<a href="{import.meta.env.VITE_BASE_URL}/tabs" class="card-body">Tabs</a>
 	</div>
 	<div class="card">
-		<a href="/pagination" class="card-body">Pagination</a>
+		<a href="{import.meta.env.VITE_BASE_URL}/pagination" class="card-body">Pagination</a>
 	</div>
 </div>
