@@ -1,0 +1,42 @@
+{
+	"name": "svelte-cybercomp-app",
+	"version": "0.9.0",
+	"description": "Svelte Components by Cybersteam",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"package": "svelte-kit package",
+		"preview": "svelte-kit preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "^1.0.0-next.26",
+		"@sveltejs/kit": "next",
+		"svelte": "^3.46.0",
+		"svelte-check": "^2.2.6",
+		"svelte-preprocess": "^4.9.4",
+		"svelte2tsx": "^0.5.3",
+		"tslib": "^2.3.1",
+		"typescript": "^4.4.3"
+	},
+	"type": "module",
+	"repository": {
+		"url": "https://github.com/Cybersteam00/svelte-cyberComp"
+	},
+	"author": {
+		"name": "Cybersteam00"
+	},
+	"bugs": {
+		"url": "https://github.com/Cybersteam00/svelte-cyberComp/issues"
+	},
+	"homepage": "https://github.com/Cybersteam00/svelte-cyberComp",
+	"keywords": [
+		"svelte",
+		"svelte datatable",
+		"svelte tabs",
+		"svelte pagination",
+		"datatable",
+		"pagination",
+		"tabs"
+	]
+}

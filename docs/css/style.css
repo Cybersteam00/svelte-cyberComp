@@ -1,0 +1,29 @@
+main,
+footer{
+	padding: .5rem;
+}
+
+.highlight{
+	padding: 1rem;
+	background-color: #f8f9fa;
+}
+
+.grid-users .pagination-items{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 400px);
+	grid-gap: .5rem;
+}
+
+.grid-components{
+	display: grid;
+	grid-gap: .5rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+a.card-body{
+	text-decoration: none;
+}
+
+a.card-body:hover{
+	background-color: #f8f9fa;
+}
