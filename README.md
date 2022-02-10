@@ -11,4 +11,4 @@ Available Components:
 npm i svelte-cybercomp
 ```
 ## docs
-[`docs`](https://github.com/Cybersteam00/svelte-cyberComp)
+For more information please read the [`docs`](https://cybersteam00.github.io/svelte-cyberComp/)

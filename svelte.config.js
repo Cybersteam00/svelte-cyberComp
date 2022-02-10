@@ -18,7 +18,7 @@ const config = {
 			fallback: null
 		}),
 		paths:{
-			base: dev ? "" : "/azubi/app/backend"
+			base: dev ? "" : "/svelte-cyberComp"
 		},
 		vite: {
 			resolve: {
