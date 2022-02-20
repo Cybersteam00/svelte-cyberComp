@@ -3,12 +3,63 @@ footer{
 	padding: .5rem;
 }
 
+nav.navbar{
+	padding: 0 !important;
+	border-bottom: solid 1px black;
+}
+
+.navbar.navbar-expand-lg{
+	position: sticky !important;
+	top: 0;
+	z-index: 10;
+}
+
+.docs-nav{
+	position: sticky;
+	top: 4rem;
+	padding: 1rem;
+}
+
+.docs-nav .collapse{
+	padding-left: 1.5rem;
+}
+
+.link{
+	color: rgba(0,0,0,0.65);
+	padding: .25rem;
+	text-decoration: none;
+}
+
+.side-btn[aria-expanded="false"] .fas{
+	transform: rotate(-90deg);
+}
+
+.dropdown:hover .dropdown-menu{
+	display: block;
+}
+
 .highlight{
 	padding: 1rem;
 	background-color: #f8f9fa;
 }
 
-.grid-users .pagination-items{
+.grid-quickstart{
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid-quickstart > *{
+	border-radius: 5px;
+	padding: 1rem;
+	border: solid 1px #e0e0e0;
+}
+
+.grid-quickstart > .bordered{
+	border: solid 1px #c0c0c0;
+}
+
+.grid-users{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 400px);
 	grid-gap: .5rem;
@@ -17,13 +68,99 @@ footer{
 .grid-components{
 	display: grid;
 	grid-gap: .5rem;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 
 a.card-body{
 	text-decoration: none;
+	color: rgba(0,0,0,0.65);
 }
 
 a.card-body:hover{
 	background-color: #f8f9fa;
+}
+
+.accordion-item .accordion-button::after{
+	transform: rotate(0deg);
+}
+
+.accordion-item.active .accordion-button::after{
+	transform: rotate(180deg);
+}
+
+.grid-dualPagination,
+.grid-dualDataTable{
+	display: grid;
+	grid-gap: .5rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.no-first-and-last-btn .pagination .page-item:first-child,
+.no-first-and-last-btn .pagination .page-item:last-child{
+	display: none;
+}
+
+.pagination-items{
+	grid-area: items;
+}
+
+.pagination-control{
+	grid-area: control;
+}
+
+.grid-dualDataTable table{
+	grid-area: datatable;
+}
+
+.pageControl-top{
+	display: grid;
+	grid-template-areas: 'control''items';
+}
+
+.dataTable-pageControl-top{
+	display: grid;
+	grid-template-areas: 'control''datatable';
+}
+
+.grid-guide{
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+.overview{
+	display: grid;
+	grid-gap: .5rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.fas.active{
+	color: white;
+}
+
+.custom-pageControl-el .pagination-control{
+	display: flex;
+}
+
+.swapPaginationIcons .fa-angle-double-left::before{
+	content: '\f060';
+}
+
+.swapPaginationIcons .fa-angle-double-right::before{
+	content: '\f061';
+}
+
+.compactSortIcons .sort-icons > *{
+	display: block;
+}
+
+.compactSortIcons .fa-arrow-up::before{
+	content: '\f0d8';
+}
+
+.compactSortIcons .fa-arrow-down::before{
+	content: '\f0d7';
+}
+
+.compactSortIcons .fa-arrow-down{
+	content: 'f0d8';
 }

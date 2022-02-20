@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<base href="./" />
+		<link rel="icon" href="/svelte-cyberComp/favicon.png" />
+		<link rel="stylesheet" href="/svelte-cyberComp/fontawsome/all.min.css" />
+		<link rel="stylesheet" href="/svelte-cyberComp/css/bootstrap5/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="/svelte-cyberComp/css/style.css" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content=""><title>Svelte Cyber Comp - DataTable</title>
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-65a82e62.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-dfa3ad67.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/datatable.svelte-1fabbe63.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/users-1418d81b.js">
+	</head>
+	<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/svelte-cyberComp/">Svelte-cyberComp</a>
+		<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/guide">Guide</a></li>
+			<li class="nav-item dropdown"><p class="nav-link dropdown-toggle">Docs</p>
+				<ul class="dropdown-menu"><li><a class="dropdown-item" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/datatable">DataTable</a></li>
+					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></li>
+			<li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/changes">Release Notes</a></li></ul>
+		<div><a class="link" target="_blank" href="https://github.com/Cybersteam00/svelte-cyberComp">Github
+				<img src="/svelte-cyberComp/image/github.svg" alt="github" height="16"></a>
+			<a class="link" href="https://github.com/Cybersteam00/svelte-cyberComp/issues" target="_blank">Report issue
+			</a></div></div></nav>
+<main><div class="grid-guide"><aside><nav class="docs-nav"><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide">Getting Startet</a></li>
+				<li><button type="button" class="btn side-btn" aria-expanded="false"><i class="fas fa-chevron-down"></i>Components</button>
+					<div class="collapse "><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+							<li><a class="link" href="/svelte-cyberComp/guide/datatable">Datatable</a></li>
+							<li><a class="link" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+							<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
+	<div class="p-4">
+
+<h1>DataTable</h1>
+<div class="overview"><div><div class="d-flex"><div class="card"><div class="card-header text-white bg-primary">DataTable</div>
+				<div class="card-body"><p><span class="ps-2">Attributes:</span>
+						<span class="badge bg-secondary">items</span>
+						<span class="badge bg-secondary">paginate</span>
+						<span class="badge bg-secondary">perPage</span>
+						<span class="badge bg-secondary">lookupPages</span></p>
+					<p><span class="ps-2">Slots:</span>
+						<span class="badge bg-success">header</span>
+						<span class="badge bg-success">body</span>
+						<span class="badge bg-success">footer</span></p>
+					<p><span class="ps-2">Events:</span>
+						<span class="badge bg-dark">sort</span>
+						<span class="badge bg-dark">pageChanged</span></p>
+					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div>
+			<div class="card"><div class="card-header text-white bg-primary">TableHead</div>
+				<div class="card-body"><p><span class="ps-2">Attributes:</span>
+						<span class="badge bg-secondary">sort</span>
+						<span class="badge bg-secondary">sortReversed</span>
+						<span class="badge bg-secondary">active</span>
+						<span class="badge bg-secondary">sortBy</span></p>
+					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div>
+			<div class="card"><div class="card-header text-white bg-primary">PaginationControl</div>
+	<div class="card-body"><p><span class="ps-2">Attributes:</span>
+			<span class="badge bg-secondary">numberItems</span>
+			<span class="badge bg-secondary">perPage</span>
+			<span class="badge bg-secondary">currentPage</span>
+			<span class="badge bg-secondary">lookupPages</span></p>
+		<p><span class="ps-2">Slots:</span>
+			<span class="badge bg-success">pageControl</span></p>
+		<p><span class="ps-2">Events:</span>
+			<span class="badge bg-dark">pageChanged</span></p>
+		<p><span class="ps-2">class prop: <i class="fas fa-times"></i></span></p></div></div></div></div>
+	<div><div class="card"><div class="card-header text-white bg-primary">TableHead</div>
+			<div class="card-body"><p>fa-arrow-up, fa-arrow-down</p></div></div>
+		<div class="card"><div class="card-header text-white bg-primary">PaginationControl</div>
+	<div class="card-body"><ul><li>pagination-control</li>
+			<ul><li>pagination</li>
+				<ul><li>page-item, disabled, active</li>
+					<ul><li>page-link, pageSelect</li></ul></ul></ul></ul>
+		<p>fa-chevron-left, fa-chevron-right</p>
+		<p>fa-angle-double-left, fa-angle-double-right</p></div></div></div></div>
+
+<hr>
+
+<p class="h3">Default DataTable</p>
+<p>The default DataTable displays all items. To add content to thead, tbody or tfoot, use the appropiate slot names. Adding <code>TableHead</code> provides the ability to sort the table by columns, a <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank">Sort-Function</a> is needed. With this you can also sort by multiple columns.</p>
+<p>You can freely design your table-row, that will be used for each item in you array: <code>&lt;tr slot=&quot;body&quot; let:prop={item}&gt;...&lt;/tr&gt;</code>. This also provides autocompletion for a better workflow.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr><tr slot="body"><td>Lukas</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Victor</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Hilda</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Robin</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Peter</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Anna</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Chris</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr></tbody>
+	<tfoot></tfoot></table>
+
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users}&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		&lt;TableHead sort={sortByFirstName}&gt;FirstName&lt;/TableHead&gt;
+		&lt;TableHead sort={sortByLastName}&gt;LastName&lt;/TableHead&gt;
+		&lt;TableHead sort={(a,b) =&gt; {return a.age - b.age}}&gt;Age&lt;/TableHead&gt;
+		&lt;TableHead sort={(a,b) =&gt; {if(a.adress.street &lt; b.adress.street){return -1} return 1}}&gt;Adress&lt;/TableHead&gt;
+		&lt;th&gt;Parents&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		&lt;td&gt;{item.firstName}&lt;/td&gt;
+		&lt;td&gt;{item.lastName}&lt;/td&gt;
+		&lt;td&gt;{item.age}&lt;/td&gt;
+		&lt;td&gt;{item.adress.street}&lt;/td&gt;
+		&lt;td&gt;{item.parents.join(&quot;,&quot;)}&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+<br>
+<p>Additional Funcionality for each row can be created, like a checkbox or a btn to select the current item.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><br></th>
+		<th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lukas</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Victor</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hilda</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Robin</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Peter</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Anna</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Chris</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr></tbody>
+	<tfoot><tr slot="footer"><p>Selected Item:  </p></tr></tfoot></table>
+
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users}&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		&lt;th&gt;&lt;br/&gt;&lt;/th&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		&lt;td&gt;&lt;/td&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+<br>
+<p>You can also preselect the header to display a sorted array on initialisation.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><br></th>
+		<th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up active" role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Anna</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Chris</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hilda</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lukas</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Peter</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Robin</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Victor</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr></tbody>
+	<tfoot><tr slot="footer"><p>Selected Item:  </p></tr></tfoot></table>
+
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users}&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		&lt;th&gt;&lt;br/&gt;&lt;/th&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		&lt;td&gt;&lt;/td&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+<br>
+
+<p class="h3">Filter</p>
+<p>To filter your items, add the <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter-function</a> to your array. The neccessary input-elements must be added in <code>TableHead</code> using <code>slot=&quot;filter&quot;</code>. This provides a wide variaty of possibilities to filter your table, using text-input, radio-input, checkbox and select</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><br></th>
+		<th class="align-top"><div class="d-flex"><div class="flex-grow-1"><span>FisrtName</span></div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	<div slot="filter"><input type="text" value=""></div></th>
+		<th class="align-top"><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th class="align-top"><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th class="align-top"><div class="d-flex"><div class="flex-grow-1"><span>Gender</span></div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	<div slot="filter" class="d-flex"><label class="ps-2"><input type="radio" name="gender" checked>All
+				</label>
+				<label class="ps-2"><input type="radio" name="gender" value="0">male
+				</label>
+				<label><input type="radio" name="gender" value="1">female
+				</label></div></th>
+		<th class="align-top"><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th class="align-top">Parents</th></tr></thead>
+	<tbody><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>female</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Lukas</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Victor</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Hilda</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>female</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Robin</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>female</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Peter</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Anna</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>female</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td><button type="button" class="btn btn-dark">select</button></td>
+		<td>Chris</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td>male</td>
+		<td></td>
+		<td></td></tr></tbody>
+	<tfoot><tr slot="footer"><p>Selected Item:  </p></tr></tfoot></table>
+
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={filteredUsers}&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		&lt;th&gt;&lt;br/&gt;&lt;/th&gt;
+		&lt;TableHead sort={sortByLastName}&gt;
+			LastName
+			&lt;div slot=&quot;filter&quot;&gt;
+				&lt;input type=&quot;text&quot; bind:value={filterFirstName} on:input={customFilterFunction} /&gt;
+			&lt;/div&gt;
+		&lt;/TableHead&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+
+<hr>
+
+<p class="h3">Pagination</p>
+<p>To display the pagination-Control, add <code>paginate</code> to <code>DataTable</code>. The default number of displayed items per page is 25.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr><tr slot="body"><td>Lukas</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Victor</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Hilda</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Robin</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Peter</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Anna</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Chris</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li>
+		<li class="page-item disabled"><button class="page-link" aria-label="next" disabled><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="last" disabled><i class="fas fa-angle-double-right"></i></button></li></ul></div>
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users} paginate&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+
+<hr>
+
+<p>It&#39;s also possible to define the nr of items displayed for each page.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr><tr slot="body"><td>Mario</td>
+		<td>Schmidt</td>
+		<td>21</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Hans</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Andy</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td></td></tr><tr slot="body"><td>Lea</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Luigi,Francisca</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div>
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users} paginate perPage={5}&gt;
+	&lt;tr slot=&quot;header&quot; class=&quot;table-primary&quot;&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+
+<hr>
+
+<p>Adding your custom Page Control</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control"><div slot="pageControl">Items per page: <input type="number" value="1"></div>
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li><li class="page-item "><div role="button" class="page-link">4</div>
+				</li><li class="page-item "><div role="button" class="page-link">5</div>
+				</li><li class="page-item "><div role="button" class="page-link">6</div>
+				</li><li class="page-item "><div role="button" class="page-link">7</div>
+				</li><li class="page-item "><div role="button" class="page-link">8</div>
+				</li><li class="page-item "><div role="button" class="page-link">9</div>
+				</li><li class="page-item "><div role="button" class="page-link">10</div>
+				</li><li class="page-item "><div role="button" class="page-link">11</div>
+				</li><li class="page-item "><div role="button" class="page-link">12</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div>
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users} paginate perPage={5}&gt;
+	&lt;tr slot=&quot;header&quot; class=&quot;table-primary&quot;&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+
+<hr>
+
+<p>Use compact pagination</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Age</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">Adress</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Parents</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+		<td>Schmidt</td>
+		<td>22</td>
+		<td></td>
+		<td>Hans</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item"><div class="page-link pageSelect">...</div>
+				</li><li class="page-item "><div role="button" class="page-link">12</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div>
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users} paginate perPage={1} lookupPages={1}&gt;
+	&lt;tr slot=&quot;header&quot;&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+&lt;/DataTable&gt;</code></pre></div>
+
+<hr>
+
+<p class="h3">Items from http Response</p>
+<p>If you can&#39;t load all items at once to keep your webapp userfriendly, you can load them by http instead and display them once the response has been completed. This type of usecase is a bit more complicated and takes a small amount of work to include. Your response also needs the maximum nr of items based on the criteria send to the url.</p>
+<p>First, don&#39;t add <code>paginate</code> and include <code>PaginationControl</code> manualy to display the possible number of pages you can get. This also allows you to place it on top of the table. Next use the Events <code>on:sort</code> and <code>on:pageChanged</code> to send a http request and get a updated list of items to display in your DataTable.</p>
+<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+		<th>Age</th>
+		<th>Adress</th>
+		<th>Parents</th></tr></thead>
+	<tbody></tbody>
+	<tfoot><tr slot="footer"></tr></tfoot></table>
+
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		
+		<li class="page-item disabled"><button class="page-link" aria-label="next" disabled><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="last" disabled><i class="fas fa-angle-double-right"></i></button></li></ul></div>
+
+<div class="highlight"><pre class="chroma"><code>
+&lt;DataTable items={users} on:sort={loadUsers}&gt;
+	&lt;tr slot=&quot;header&quot; class=&quot;table-primary&quot;&gt;
+		&lt;TableHead sort={undefined} sortKey=&quot;firstName&quot;&gt;FirstName&lt;/TableHead&gt;
+		&lt;TableHead sort={undefined} sortKey=&quot;lastName&quot;&gt;LastName&lt;/TableHead&gt;
+		&lt;TableHead sort={undefined} sortKey=&quot;age&quot;&gt;Age&lt;/TableHead&gt;
+		&lt;TableHead sort={undefined} sortKey=&quot;adress&quot;&gt;Adress&lt;/TableHead&gt;
+		&lt;th&gt;Parents&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;body&quot; let:prop={item}&gt;
+		...
+	&lt;/tr&gt;
+	&lt;tr slot=&quot;footer&quot;&gt;
+		{#await promise}
+			&lt;i class=&quot;fas fa-spinner fa-spin&quot; /&gt;
+		{:catch err}
+			&lt;p class=&quot;alert alert-danger&quot;&gt;An error occured&lt;/p&gt;
+		{/await}
+	&lt;/tr&gt;
+&lt;/DataTable&gt;
+&lt;PaginationControl numberItems={maxitems} {perPage} bind:currentPage on:pageChanged={loadUsers}&gt;&lt;/PaginationControl&gt;</code></pre></div>
+
+<hr>
+
+<p class="h2">CSS</p>
+<p>Anything below shows things possible with CSS. A seperate CSS-file is required.</p>
+
+<div class="grid-dualDataTable"><div class="no-first-and-last-btn"><p class="h3">Dont show &#39;First&#39; and &#39;Last&#39; btn</p>
+		<table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+				<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+				<td>Schmidt</td></tr><tr slot="body"><td>Mario</td>
+				<td>Schmidt</td></tr><tr slot="body"><td>Hans</td>
+				<td>Schmidt</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li><li class="page-item "><div role="button" class="page-link">4</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div></div>
+	<div><p class="h3">PageControl at top</p>
+		<div class="dataTable-pageControl-top"><table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+					<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Mario</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Hans</td>
+					<td>Schmidt</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li><li class="page-item "><div role="button" class="page-link">4</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div></div></div>
+	<div><p class="h3">Swap icons</p>
+		<div class="swapPaginationIcons"><table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+					<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Mario</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Hans</td>
+					<td>Schmidt</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li><li class="page-item "><div role="button" class="page-link">4</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div></div></div>
+	<div><p class="h3">Compact sort-icons</p>
+		<div class="compactSortIcons"><table class="table table-bordered"><thead><tr slot="header" class="table-primary"><th><div class="d-flex"><div class="flex-grow-1">FirstName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th>
+					<th><div class="d-flex"><div class="flex-grow-1">LastName</div>
+		<div class="sort-icons"><i class="fas fa-arrow-up " role="button"></i>
+			<i class="fas fa-arrow-down " role="button"></i></div></div>
+	</th></tr></thead>
+	<tbody><tr slot="body"><td>Bob</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Mario</td>
+					<td>Schmidt</td></tr><tr slot="body"><td>Hans</td>
+					<td>Schmidt</td></tr></tbody>
+	<tfoot></tfoot></table>
+<div class="pagination-control">
+	<ul class="pagination"><li class="page-item disabled"><button class="page-link" aria-label="first" disabled><i class="fas fa-angle-double-left"></i></button></li>
+		<li class="page-item disabled"><button class="page-link" aria-label="previous" disabled><i class="fas fa-chevron-left"></i></button></li>
+		<li class="page-item active"><div role="button" class="page-link">1</div>
+				</li><li class="page-item "><div role="button" class="page-link">2</div>
+				</li><li class="page-item "><div role="button" class="page-link">3</div>
+				</li><li class="page-item "><div role="button" class="page-link">4</div>
+				</li>
+		<li class="page-item "><button class="page-link" aria-label="next" ><i class="fas fa-chevron-right"></i></button></li>
+		<li class="page-item "><button class="page-link" aria-label="last" ><i class="fas fa-angle-double-right"></i></button></li></ul></div></div></div></div></div></div></main>
+
+
+
+		<script type="module" data-hydrate="rpibvh">
+		import { start } from "/svelte-cyberComp/_app/start-65a82e62.js";
+		start({
+			target: document.querySelector('[data-hydrate="rpibvh"]').parentNode,
+			paths: {"base":"/svelte-cyberComp","assets":"/svelte-cyberComp"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js"),
+						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js"),
+						import("/svelte-cyberComp/_app/pages/guide/datatable.svelte-1fabbe63.js")
+				],
+				url: new URL("http://sveltekit-prerender/svelte-cyberComp/guide/datatable"),
+				params: {}
+			}
+		});
+	</script></body>
+</html>

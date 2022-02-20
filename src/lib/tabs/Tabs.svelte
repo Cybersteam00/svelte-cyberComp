@@ -1,23 +1,16 @@
 <script lang="ts">
-	interface tabs{
-		registerTab: (a: any) => void,
-		registerPanel: (a: any) => void,
-		selectTab: (a: any) => void,
-		selectedTab: Writable<any>,
-		selectedPanel: Writable<any>
-	}
-
 	import { createEventDispatcher, setContext } from 'svelte';
-	import { Writable, writable } from 'svelte/store';
+	import { writable } from 'svelte/store';
+	import type { IPanel, ITab, TabsContext } from './tabs';
 
-	let tabs: any[] = [];
-	let panels: any[] = [];
+	let tabs: ITab[] = [];
+	let panels: IPanel[] = [];
 	let dispatcher = createEventDispatcher();
 
-	const selectedTab = writable(null);
-	const selectedPanel = writable(null);
+	const selectedTab = writable<ITab>(null);
+	const selectedPanel = writable<IPanel>(null);
 
-	setContext<tabs>("tabs", {
+	setContext<TabsContext>("tabKey", {
 		registerTab: tab => {
 			tabs = [...tabs, tab];
 			if(tab.active){
@@ -46,6 +39,6 @@
 	});
 </script>
 
-<div>
+<div class={$$props.class}>
 	<slot></slot>
 </div>

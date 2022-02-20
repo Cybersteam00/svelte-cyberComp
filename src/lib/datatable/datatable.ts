@@ -1,2 +1,15 @@
-export {default as Datatable} from "./Datatable.svelte";
-export {default as Tablehead} from "./Tablehead.svelte";
+import type { Writable } from "svelte/store";
+
+export {default as DataTable} from "./DataTable.svelte";
+export {default as TableHead} from "./TableHead.svelte";
+
+export interface TableContext<T>{
+	selectHeader: (header: ITableHeader<T>) => void,
+	selectedHeader: Writable<ITableHeader<T>>
+}
+
+export interface ITableHeader<T>{
+	sort: (a: T,b: T) => number,
+	sortReversed: boolean,
+	sortBy: string
+}

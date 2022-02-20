@@ -1,6 +1,6 @@
 {
 	"name": "svelte-cybercomp",
-	"version": "0.9.0",
+	"version": "1.0.0",
 	"description": "Svelte Components by Cybersteam",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -32,9 +32,11 @@
 	"homepage": "https://cybersteam00.github.io/svelte-cyberComp/",
 	"keywords": [
 		"svelte",
+		"svelte accordion",
 		"svelte datatable",
 		"svelte tabs",
 		"svelte pagination",
+		"accordion",
 		"datatable",
 		"pagination",
 		"tabs"

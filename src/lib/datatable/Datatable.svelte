@@ -1,43 +1,50 @@
 <script lang="ts">
 	type T = $$Generic
 
-	import {PaginationControl} from '../index';
+	import {PaginationControl, TableContext} from '../index';
 	import { createEventDispatcher, setContext } from 'svelte';
-	import { Writable, writable } from 'svelte/store';
+	import { writable } from 'svelte/store';
+	import type { ITableHeader } from './datatable';
 
 	export let items: T[];
 	export let paginate: boolean = false;
 	export let perPage: number = 25;
+	export let lookupPages: number = null;
 
-	let currentPage: number = 0;
-	let currentSort: (a: T,b: T) => number = (a,b) => {return 0};
+	let currentPage: number = 1;
+	
 	let dispatcher = createEventDispatcher();
 	let sortReversed: boolean = false;
 
-	const selectedHeader: Writable<any> = writable({
-		sort:undefined,
-		sortReversed: false
+	const selectedHeader = writable<ITableHeader<T>>({
+		sort: undefined,
+		sortReversed: false,
+		sortBy: ""
 	});
 
-	if(!paginate){
+	if(!paginate && items.length > 0){
 		perPage = items.length;
 	}
 
-	items.sort(currentSort);
-	items = items;
-
-	setContext("datatable", {
+	setContext<TableContext<T>>("dataTableKey", {
 		selectHeader: header => {
 			if($selectedHeader != header || $selectedHeader.sortReversed != sortReversed){
-				currentSort = header.sort;
-				items.sort(currentSort);
+				if(header.sort != undefined){
+					items.sort(header.sort);
 
-				if(header.sortReversed){
-					items.reverse();
+					if(header.sortReversed){
+						items.reverse();
+					}
+					items = items;
 				}
-				items = items;
+
 				sortReversed = header.sortReversed;
-				dispatcher("sort", {});
+
+				dispatcher("sort", {
+					sort: header.sort,
+					sortReversed: header.sortReversed,
+					sortBy: header.sortBy
+				});
 			}
 
 			$selectedHeader = header;
@@ -46,12 +53,12 @@
 	});
 </script>
 
-<table class="table table-bordered">
+<table class={$$props.class}>
 	<thead>
 		<slot name="header"></slot>
 	</thead>
 	<tbody>
-		{#each items.slice(currentPage*perPage, (currentPage+1)*perPage) as item}
+		{#each items.slice((currentPage-1)*perPage, currentPage*perPage) as item}
 			<slot name="body" prop={item}></slot>
 		{/each}
 	</tbody>
@@ -60,5 +67,7 @@
 	</tfoot>
 </table>
 {#if paginate}
-	<PaginationControl numberItems={items.length} bind:currentPage {perPage} on:pageChanged></PaginationControl>
+	<PaginationControl numberItems={items.length} bind:currentPage {perPage} {lookupPages} on:pageChanged>
+		<slot name="pageControl" slot="pageControl"></slot>
+	</PaginationControl>
 {/if}
