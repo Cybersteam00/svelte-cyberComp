@@ -1,7 +1,8 @@
 # Svelte-cyberComp
-powerfull, lightweight Svelte Components writen in typescript
+powerfull, lightweight Svelte Components writen in Svelte and Typescript
 
 Available Components:
+- Accordion
 - Datatable
 - Tabs
 - Pagination
