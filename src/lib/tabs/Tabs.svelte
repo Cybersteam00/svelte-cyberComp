@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+	export const tabsKey = {name:"tabsKey"}
+</script>
+
 <script lang="ts">
 	import { createEventDispatcher, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -10,18 +14,18 @@
 	const selectedTab = writable<ITab>(null);
 	const selectedPanel = writable<IPanel>(null);
 
-	setContext<TabsContext>("tabKey", {
+	setContext<TabsContext>(tabsKey, {
 		registerTab: tab => {
 			tabs = [...tabs, tab];
-			if(tab.active){
+			if(tab.active && !tab.disabled){
 				$selectedTab = tab;
 			}
 		},
 
 		registerPanel: panel => {
 			panels = [...panels, panel];
-			if(tabs.indexOf($selectedTab) >= 0){
-				$selectedPanel = panels[tabs.indexOf($selectedTab)];
+			if(tabs[panels.length-1].active && !tabs[panels.length-1].disabled){
+				$selectedPanel = panel;
 				panel.loaded = true;
 			}
 		},
@@ -37,8 +41,16 @@
 		selectedTab,
 		selectedPanel
 	});
+
+	export function open(index: number){
+		if(!tabs[index-1].disabled){
+			$selectedTab = tabs[index-1];
+			$selectedPanel = panels[index-1];
+			$selectedPanel.loaded = true;
+		}
+	}
 </script>
 
-<div class={$$props.class}>
+<div class={$$props.class || ''}>
 	<slot></slot>
 </div>

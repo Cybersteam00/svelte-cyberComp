@@ -18,14 +18,14 @@ export const users: User[] = [
 		"age": 21,
 		"gender": Gender.MALE,
 		"adress": {
-			"street": ""
+			"street": "Avenue 2"
 		},
 		"parents": []
 	},
 	{
 		"firstName": "Hans",
 		"lastName": "Schmidt",
-		"age": 22,
+		"age": 23,
 		"gender": Gender.MALE,
 		"adress": {
 			"street": ""
@@ -55,17 +55,17 @@ export const users: User[] = [
 	{
 		"firstName": "Lukas",
 		"lastName": "Schmidt",
-		"age": 22,
+		"age": 27,
 		"gender": Gender.MALE,
 		"adress": {
-			"street": ""
+			"street": "Avenue 1"
 		},
 		"parents": []
 	},
 	{
 		"firstName": "Victor",
 		"lastName": "Schmidt",
-		"age": 22,
+		"age": 21,
 		"gender": Gender.MALE,
 		"adress": {
 			"street": ""
@@ -75,7 +75,7 @@ export const users: User[] = [
 	{
 		"firstName": "Hilda",
 		"lastName": "Schmidt",
-		"age": 22,
+		"age": 21,
 		"gender": Gender.FEMALE,
 		"adress": {
 			"street": ""
@@ -88,14 +88,14 @@ export const users: User[] = [
 		"age": 22,
 		"gender": Gender.FEMALE,
 		"adress": {
-			"street": ""
+			"street": "Avenue 1"
 		},
 		"parents": []
 	},
 	{
 		"firstName": "Peter",
 		"lastName": "Schmidt",
-		"age": 22,
+		"age": 24,
 		"gender": Gender.MALE,
 		"adress": {
 			"street": ""
@@ -117,6 +117,36 @@ export const users: User[] = [
 		"lastName": "Schmidt",
 		"age": 22,
 		"gender": Gender.MALE,
+		"adress": {
+			"street": ""
+		},
+		"parents": []
+	},
+	{
+		"firstName": "Hellen",
+		"lastName": "Bush",
+		"age": 32,
+		"gender": Gender.FEMALE,
+		"adress": {
+			"street": "Avenue 1"
+		},
+		"parents": []
+	},
+	{
+		"firstName": "Chris",
+		"lastName": "Bush",
+		"age": 22,
+		"gender": Gender.MALE,
+		"adress": {
+			"street": ""
+		},
+		"parents": []
+	},
+	{
+		"firstName": "Anna",
+		"lastName": "Bush",
+		"age": 29,
+		"gender": Gender.FEMALE,
 		"adress": {
 			"street": ""
 		},

@@ -9,12 +9,12 @@
 		<link rel="stylesheet" href="/svelte-cyberComp/css/bootstrap5/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="/svelte-cyberComp/css/style.css" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content=""><title>Svelte Cyber Comp - Getting startet</title>
+		<meta http-equiv="content-security-policy" content=""><title>Svelte Cyber Comp - About Testdata</title>
 	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-d25908a3.js">
 	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-cb8b768f.js">
 	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js">
 	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/index.svelte-1028a81e.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/testdata.svelte-01ea8df1.js">
 	</head>
 	<body>
 
@@ -42,20 +42,22 @@
 								<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
 		<div class="col p-4">
 
-<h1 class="d-none">Getting Startet</h1>
-<p class="h3">Quick start</p>
-<p>To install and use the components for your Svelte App, type in:</p>
-<div class="highlight mt-4"><pre><code>npm i svelte-cybercomp</code></pre></div>
-<p class="alert alert-info mt-4">Alternatively you can download the code from <a href="https://github.com/Cybersteam00/svelte-cyberComp/tree/main/src/lib" class="link" target="_blank">github.com</a> and include it manually. Only do it, if you have technical limitation and not because of design limitation. These components are build with desing-freedom in mind.</p>
-<p>To learn about the components, click one of the available links.</p>
-<div class="text-end"><a href="/svelte-cyberComp/guide/testdata" class="btn btn-light">About Testdata <i class="fas fa-arrow-right"></i></a></div></div></div></div></main>
+<h1 class="d-none">About Testdata</h1>
+<p>To present the posibilitys of these Components, a collection of arbitrary Users has been created.</p>
+<p>A User contains the following properties:</p>
+<ul><li>firstName: string</li>
+	<li>lastName: string</li>
+	<li>age: number</li>
+	<li>gender: enum</li>
+	<li>subscribed: boolean</li>
+	<li>parents: string[]</li></ul></div></div></div></main>
 
 
 
-		<script type="module" data-hydrate="gb6mfp">
+		<script type="module" data-hydrate="1azss17">
 		import { start } from "/svelte-cyberComp/_app/start-d25908a3.js";
 		start({
-			target: document.querySelector('[data-hydrate="gb6mfp"]').parentNode,
+			target: document.querySelector('[data-hydrate="1azss17"]').parentNode,
 			paths: {"base":"/svelte-cyberComp","assets":"/svelte-cyberComp"},
 			session: {},
 			route: true,
@@ -67,9 +69,9 @@
 				nodes: [
 					import("/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js"),
 						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js"),
-						import("/svelte-cyberComp/_app/pages/guide/index.svelte-1028a81e.js")
+						import("/svelte-cyberComp/_app/pages/guide/testdata.svelte-01ea8df1.js")
 				],
-				url: new URL("http://sveltekit-prerender/svelte-cyberComp/guide"),
+				url: new URL("http://sveltekit-prerender/svelte-cyberComp/guide/testdata"),
 				params: {}
 			}
 		});

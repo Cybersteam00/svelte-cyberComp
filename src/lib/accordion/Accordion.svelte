@@ -1,44 +1,38 @@
-<script lang="ts">
+<script lang="ts" context="module">
+	export const accordionKey = {name:"accordionKey"}
+</script>
 
-	import { createEventDispatcher, setContext } from 'svelte';
+<script lang="ts">
+	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { AccordionContext, IAccordionItem } from './accordion';
 
 	export let alwaysOpen: boolean = false;
-	export let animate: boolean = false;
 
 	let items = writable<IAccordionItem[]>([]);
-	let dispatcher = createEventDispatcher();
+	let collapsing = writable<boolean>(false);
 
-	setContext<AccordionContext>("accordionKey", {
+	setContext<AccordionContext>(accordionKey, {
 		registerItem: item => {
 			item.index = $items.length;
-			item.animate = animate;
 			$items = [...$items, item];
 
 			return item;
 		},
-
-		toggleItem: item => {
-			if(!alwaysOpen){
-				$items.map(i => {
-					if(i != item){
-						i.active = false;
-					}
-					return i
-				});
-			}
-			item.active = !item.active;
-			item.loaded = true;
-			$items[item.index].active = item.active;
-
-			dispatcher("toggle")
-			return item;
-		},
-		items: items
+		items: items,
+		collapsing,
+		alwaysOpen
 	});
+
+	export function open(index: number){
+		$items[index-1].open();
+	}
+
+	export function close(index: number){
+		$items[index-1].close();
+	}
 </script>
 
-<div class={$$props.class}>
+<div class={$$props.class || ''}>
 	<slot></slot>
 </div>

@@ -45,8 +45,8 @@
 </svelte:head>
 
 <h1>Pagination</h1>
-<div class="overview">
-	<div>
+<div class="row">
+	<div class="col-12 col-lg-6">
 		<p class="h5">Components</p>
 		<div class="d-flex">
 			<div class="card">
@@ -70,14 +70,14 @@
 						<span class="badge bg-dark">pageChanged</span>
 					</p>
 					<p>
-						<span class="ps-2">class prop: <i class="fas fa-check"></i></span>
+						<span class="ps-2">$$prop: class</span>
 					</p>
 				</div>
 			</div>
 			<PaginationContr />
 		</div>
 	</div>
-	<div>
+	<div class="col-12 col-lg-6">
 		<p class="h5">Internal css classes</p>
 		<div class="d-flex">
 			<div class="card">
@@ -95,7 +95,7 @@
 
 <p class="h3">Default Pagination</p>
 <p>The default Pagination displays 25 Items with a full list of available Pages. Clicking on a pageNr automaticly updates the content displayed on screen. If you are on the first or last page, the forward or backward button will be disabled.</p>
-<p>To design your item, you need a root-Element that is asigned to the body-slot and can acces the JS-Object used for that current item: <code>{`<div slot="body" let:prop={item}></div>`}</code>. If you have Typescript enabled, all your items properties and functions will be autocompletet for a more stable development process.</p>
+<p>To design your item, you need a root-Element that is asigned to the body-slot in order to accces the current item: <code>{`<div slot="body" let:prop={item}></div>`}</code>. If you have Typescript enabled, all your items properties and functions will be autocompletet for a more stable development process.</p>
 <Pagination items={users} class="grid-users">
 	<div class="card" slot="body" let:prop={user}>
 		<div class="card-header">{user.firstName} {user.lastName}</div>
@@ -164,7 +164,7 @@
 				<p>Adress: {user.adress.street}</p>
 			</div>
 		</div>
-		<div slot="pageControl" style="display: flex">
+		<div slot="pageControl" class="d-flex">
 			<span>per Page: </span>
 			<div>
 				<input type="number" class="form-control" bind:value={perPage1} />
@@ -191,8 +191,7 @@
 
 <p class="h3">Compact Pages</p>
 <p>
-	If you want to display a compact pageControl instead of all 20 or more available Pages, you can use <code>lookupPages</code>. That way the first 4 Pages and your nr of prevoius and next pages will
-	be clickable.
+	If you want to display a compact pageControl instead of all 20 or more available Pages, you can use <code>lookupPages</code>. That way the next and previous nr pages will be clickable, in addition to the first and last 2 pages.
 </p>
 
 <Pagination items={users} perPage={1} lookupPages={2} class="grid-users">
@@ -221,7 +220,7 @@
 
 <p class="h3">Jump to Page</p>
 <p>
-	Under certain circumstances you want to include a way to directly jump to a Page. Well you can. With <code>pageControl</code> slot and the <code>currentPage</code> value. Doing it this way was a councious
+	Under certain circumstances you want to include a way to directly jump to a Page. With <code>pageControl</code> slot and the <code>currentPage</code> value you can include such a feature. Doing it this way was a councious
 	choice to allow you the artistic freedom of your own pagination-control.
 </p>
 <p>Don't worry, your user can not go outside the available range.</p>
@@ -264,8 +263,8 @@
 <p class="h3">Filter Items</p>
 <p />
 
-<div class="grid-dualPagination custom-pageControl-el">
-	<div>
+<div class="row custom-pageControl-el">
+	<div class="col-12 col-lg-6">
 		<Pagination items={users.filter((user) => user.firstName.startsWith(searchname))} perPage={perPage1} class="grid-users">
 			<div class="card" slot="body" let:prop={user}>
 				<div class="card-header">{user.firstName} {user.lastName}</div>
@@ -297,7 +296,7 @@
 				></pre>
 		</div>
 	</div>
-	<div>
+	<div class="col-12 col-lg-6">
 		<Pagination items={users.filter((user) => user.firstName.startsWith(searchname2))} perPage={1} lookupPages={1} class="grid-users">
 			<div class="card" slot="body" let:prop={user}>
 				<div class="card-header">{user.firstName} {user.lastName}</div>
@@ -336,7 +335,7 @@
 <p class="h3">Working with filtered Items from URL</p>
 <p>
 	If you can't load all items at once, to keep your webapp user friendly, you can still use this Pagination. It just required a bit of work, the <code>noControl</code> Attribute and the manual
-	inclusion of <code>PaginationControl</code>. Make sure to keep the perPage the same and bind the <code>currentPage</code> to ensure a stable pageChange.
+	inclusion of <code>PaginationControl</code>. Make sure to keep the perPage the same and bind the <code>currentPage</code> to ensure a stable pageChange. By listening to the events you can request your items and update the pagination.
 </p>
 <p>This example implies your Response has the already filtered Items and the max nr of available items.</p>
 
@@ -386,8 +385,8 @@
 <p class="h2">CSS</p>
 <p>Anything below shows things possible with CSS. A seperate CSS-file is required.</p>
 
-<div class="grid-dualPagination">
-	<div class="no-first-and-last-btn">
+<div class="row">
+	<div class="no-first-and-last-btn col-12 col-lg-6">
 		<p class="h3">Dont show 'First' and 'Last' btn</p>
 		<Pagination items={users.slice(0,2)} class="grid-users">
 			<div class="card" slot="body" let:prop={user}>
@@ -400,7 +399,7 @@
 			</div>
 		</Pagination>
 	</div>
-	<div>
+	<div class=" col-12 col-lg-6">
 		<p class="h3">PageControl at top</p>
 		<div class="pageControl-top">
 			<Pagination items={users.slice(0,2)} class="grid-users">
@@ -415,7 +414,7 @@
 			</Pagination>
 		</div>
 	</div>
-	<div>
+	<div class=" col-12 col-lg-6">
 		<p class="h3">Swap icons</p>
 		<div class="swapPaginationIcons">
 			<Pagination items={users.slice(0,2)} class="grid-users">

@@ -12,7 +12,8 @@ export interface TabsContext{
 	selectedPanel: Writable<IPanel>
 }
 export interface ITab{
-	active: boolean
+	active: boolean,
+	disabled: boolean
 }
 
 export interface IPanel{

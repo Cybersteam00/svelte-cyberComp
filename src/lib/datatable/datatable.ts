@@ -10,6 +10,7 @@ export interface TableContext<T>{
 
 export interface ITableHeader<T>{
 	sort: (a: T,b: T) => number,
+	additionalSorts: ((a: T,b: T) => number)[],
 	sortReversed: boolean,
 	sortBy: string
 }

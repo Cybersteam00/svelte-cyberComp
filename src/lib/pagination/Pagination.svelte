@@ -10,7 +10,7 @@
 	export let noControl: boolean = false;
 </script>
 
-<div class="pagination-items {$$props.class}">
+<div class="pagination-items {$$props.class || ''}">
 	{#each items.slice((currentPage - 1) * perPage, currentPage * perPage) as item}
 		<slot name="body" prop={item} />
 	{/each}

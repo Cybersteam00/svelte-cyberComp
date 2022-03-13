@@ -10,53 +10,58 @@
 		<link rel="stylesheet" href="/svelte-cyberComp/css/style.css" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content=""><title>Svelte Cyber Comp - Tabs</title>
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-65a82e62.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-dfa3ad67.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/tabs.svelte-5b0c8ad3.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/Counter-73405223.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-d25908a3.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-cb8b768f.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/tabs.svelte-f980dcce.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/Counter-7062ce85.js">
 	</head>
 	<body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/svelte-cyberComp/">Svelte-cyberComp</a>
-		<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/guide">Guide</a></li>
-			<li class="nav-item dropdown"><p class="nav-link dropdown-toggle">Docs</p>
-				<ul class="dropdown-menu"><li><a class="dropdown-item" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/datatable">DataTable</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></li>
-			<li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/changes">Release Notes</a></li></ul>
+<nav class="navbar navbar-expand-md navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/svelte-cyberComp/">Svelte-cyberComp</a>
+		<div class="collapse navbar-collapse"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/guide">Guide</a></li>
+				<li class="nav-item dropdown"><p class="nav-link dropdown-toggle" role="button">Docs</p>
+					<ul class="dropdown-menu"><li><a class="dropdown-item" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/datatable">DataTable</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></li>
+				<li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/changes">Release Notes</a></li></ul></div>
 		<div><a class="link" target="_blank" href="https://github.com/Cybersteam00/svelte-cyberComp">Github
 				<img src="/svelte-cyberComp/image/github.svg" alt="github" height="16"></a>
 			<a class="link" href="https://github.com/Cybersteam00/svelte-cyberComp/issues" target="_blank">Report issue
-			</a></div></div></nav>
-<main><div class="grid-guide"><aside><nav class="docs-nav"><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide">Getting Startet</a></li>
-				<li><button type="button" class="btn side-btn" aria-expanded="false"><i class="fas fa-chevron-down"></i>Components</button>
-					<div class="collapse "><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/datatable">Datatable</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
-	<div class="p-4">
+			</a></div>
+		<button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div></nav>
+<main><div class="container-fluid"><div class="row"><aside class="col-md-auto docs-aside"><button class="btn btn-dark position-absolute d-block d-md-none start-100"><i class="fas fa-angle-double-right"></i></button>
+			<nav class="docs-nav"><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide">Getting Startet</a></li>
+					<li><a class="link" href="/svelte-cyberComp/guide/testdata">About Testdata</a></li>
+					<li><button type="button" class="btn side-btn" aria-expanded="false"><i class="fas fa-chevron-down"></i>Components</button>
+						<div class="collapse "><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/datatable">Datatable</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
+		<div class="col p-4">
 
 <h1>Tabs</h1>
-<div class="overview"><div><p class="h5">Components</p>
+<div class="row"><div class="col-12 col-lg-6"><p class="h5">Components</p>
 		<div class="d-flex"><div class="card"><div class="card-header text-white bg-primary">Tabs</div>
 				<div class="card-body"><p><span class="ps-2">Events:</span>
 						<span class="badge bg-dark">tabChanged</span></p>
-					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div>
+					<p><span class="ps-2">Functions:</span>
+						<span class="badge bg-dark">open</span></p>
+					<p><span class="ps-2">$$props: class</span></p></div></div>
 			<div class="card"><div class="card-header text-white bg-primary">Tab</div>
 				<div class="card-body"><p><span class="ps-2">Attributes:</span>
 						<span class="badge bg-secondary">active</span>
 						<span class="badge bg-secondary">disabled</span></p>
-					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div>
+					<p><span class="ps-2">$$props: class</span></p></div></div>
 			<div class="card"><div class="card-header text-white bg-primary">TabContent</div>
 				<div class="card-body"><p><span class="ps-2">Attributes:</span>
 						<span class="badge bg-secondary">lazy</span>
 						<span class="badge bg-secondary">loadOnce</span></p>
-					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div></div></div>
-	<div><p class="h5">Internal css classes</p>
+					<p><span class="ps-2">$$props: class</span></p></div></div></div></div>
+	<div class="col-12 col-lg-6"><p class="h5">Internal css classes</p>
 		<div class="d-flex"><div class="card"><div class="card-header text-white bg-primary">Tab</div>
 				<div class="card-body"><p>nav-link, disabled, active</p></div></div>
 			<div class="card"><div class="card-header text-white bg-primary">TabContent</div>
@@ -66,10 +71,10 @@
 
 <p class="h3">Default Tabs</p>
 <p>The default Tab Component loads all Content. Disabled Tabs won&#39;t be activated, but their content will be loaded regardless.</p>
-<div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
+<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Content 2</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Content 3</div></li>
-		<li><div class="nav-link disabled" role="button">Content 4</div></li></ul>
+		<li class=""><div class="nav-link disabled" role="button">Content 4</div></li></ul>
 	<div class="tab-content"><div class="tab-pane" role="tabpanel"><div>Content 1</div>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div>
@@ -104,7 +109,7 @@
 <hr>
 
 <p>It&#39;s also possible to preselect the active Tab.</p>
-<div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
+<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
 		<li class="nav-item"><div class="nav-link  active" role="button">Content 2</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Content 3</div></li>
 		<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
@@ -141,7 +146,7 @@
 <hr>
 
 <p>If you preselected a disabled Tab, it won&#39;t be activated.</p>
-<div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
+<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Content 1</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Content 2</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Content 3</div></li>
 		<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
@@ -177,22 +182,32 @@
 <hr>
 
 <p class="h3">Lazy loading and persistent content</p>
-<p>Under certain circumstances you only want to load your content, once your user selected the respective tab. To enable lazyyload, add the <code>lazy</code> attribute to <code>TabContent</code>.</p>
+<p>Under certain circumstances you only want to load your content, once your user selected the respective tab. To enable lazyload, add the <code>lazy</code> attribute to <code>TabContent</code>.</p>
 <p>Keep in mind the content will be loaded every time the tab is activated. To only load it once, add <code>loadOnce</code>.</p>
-<div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Lazy Content 1</div></li>
-		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
-		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3</div></li>
-		<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
-	<div class="tab-content"><div class="active tab-pane" role="tabpanel"><div>Lazy Content 1</div>
-			<button type="button" class="btn btn-dark">Increase</button>
+<div class="row"><div class="col-12 col-lg-6"><b>Regular</b>
+		<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Lazy Content 1</div></li>
+				<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
+				<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3</div></li>
+				<li class="nav-item"><div class="nav-link" role="button">Content 4</div></li>
+				<li class="nav-item"><div class="nav-link disabled" role="button">Content 5</div></li></ul>
+			<div class="tab-content">
+				
+				
+				
+				</div></div></div>
+	<div class="col-12 col-lg-6"><b>Preselected</b>
+		<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link" role="button">Lazy Content 1</div></li>
+				<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
+				<li class="nav-item"><div class="nav-link  active" role="button">Lazy Content 3</div></li>
+				<li class="nav-item"><div class="nav-link" role="button">Content 4</div></li>
+				<li class="nav-item"><div class="nav-link disabled" role="button">Content 5</div></li></ul>
+			<div class="tab-content">
+				
+				<div class="tab-pane active" role="tabpanel"><div>Lazy Content 3 (Persistent)</div>
+					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div>
-		
-		<div class="tab-pane" role="tabpanel"><div>Lazy Content 3 (Persistent)</div>
-			<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div>
-		<div class="tab-pane" role="tabpanel"><div>Content 4</div>
-			<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div></div></div>
+				
+				</div></div></div></div>
 
 <div class="highlight"><pre class="chroma"><code>
 &lt;Tabs&gt;
@@ -214,12 +229,12 @@
 <hr>
 
 <p class="h3">Nested Tabs</p>
-<p>Use nested Tabs to group related Content together.</p>
-<div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
+<p>If neccessary, Tabs can be nested.</p>
+<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
 		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3 (Persistend)</div></li>
 		<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
-	<div class="tab-content"><div class="tab-pane p-4 active" role="tabpanel"><div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
+	<div class="tab-content"><div class="tab-pane p-4 active" role="tabpanel"><div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
 					<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
 					<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3 (Persistend)</div></li>
 					<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
@@ -227,30 +242,11 @@
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div>
 					
-					<div class="tab-pane" role="tabpanel"><div>Lazy Content 3 (Persistent)</div>
-						<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div>
-					<div class="tab-pane" role="tabpanel"><div>Content 4</div>
-						<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div></div></div></div>
-		
-		<div class="tab-pane p-4" role="tabpanel"><div><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
-					<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
-					<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3 (Persistend)</div></li>
-					<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
-				<div class="tab-content"><div class="tab-pane active" role="tabpanel"><div>Lazy Content 1</div>
-						<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div>
 					
-					<div class="tab-pane" role="tabpanel"><div>Lazy Content 3 (Persistent)</div>
-						<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div>
-					<div class="tab-pane" role="tabpanel"><div>Content 4</div>
-						<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div></div></div></div>
-		<div class="tab-pane p-4" role="tabpanel"><div>Content 4</div>
-			<button type="button" class="btn btn-dark">Increase</button>
-<p>0</p></div></div></div>
+					</div></div></div>
+		
+		
+		</div></div>
 
 <div class="highlight"><pre class="chroma"><code>
 &lt;Tabs&gt;
@@ -264,14 +260,43 @@
 		&lt;/Tabs&gt;
 	&lt;/TabContent&gt;
 	...
-&lt;/Tabs&gt;</code></pre></div></div></div></main>
+&lt;/Tabs&gt;</code></pre></div>
+
+<hr>
+
+<p class="h3">Using Controlable Buttons</p>
+<p>If desired you can use the <code>open()</code> function to switch between tabs. The number indicates which Tab will be opened.</p>
+<div class=""><ul class="nav nav-tabs"><li class="nav-item"><div class="nav-link  active" role="button">Content 1</div></li>
+		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 2</div></li>
+		<li class="nav-item"><div class="nav-link" role="button">Lazy Content 3 (Persistend)</div></li>
+		<li class="nav-item"><div class="nav-link disabled" role="button">Content 4</div></li></ul>
+	<div class="tab-content"><div class="active tab-pane p-4" role="tabpanel"><div>Content 1</div>
+			<button type="button" class="btn btn-dark">Increase</button>
+<p>0</p>
+			<button class="btn btn-dark">Open 2</button></div>
+		
+		
+		</div></div>
+
+<div class="highlight"><pre class="chroma"><code>
+let tabs
+...
+&lt;Tabs bind:this={tabs}&gt;
+	&lt;ul&gt;
+		...
+	&lt;/ul&gt;
+	&lt;TabContent&gt;
+		&lt;button on:click={tabs.open(2)}&gt;Open 2&lt;/button&gt;
+	&lt;/TabContent&gt;
+	...
+&lt;/Tabs&gt;</code></pre></div></div></div></div></main>
 
 
 
-		<script type="module" data-hydrate="95fvue">
-		import { start } from "/svelte-cyberComp/_app/start-65a82e62.js";
+		<script type="module" data-hydrate="zcjc2g">
+		import { start } from "/svelte-cyberComp/_app/start-d25908a3.js";
 		start({
-			target: document.querySelector('[data-hydrate="95fvue"]').parentNode,
+			target: document.querySelector('[data-hydrate="zcjc2g"]').parentNode,
 			paths: {"base":"/svelte-cyberComp","assets":"/svelte-cyberComp"},
 			session: {},
 			route: true,
@@ -281,9 +306,9 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js"),
-						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js"),
-						import("/svelte-cyberComp/_app/pages/guide/tabs.svelte-5b0c8ad3.js")
+					import("/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js"),
+						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js"),
+						import("/svelte-cyberComp/_app/pages/guide/tabs.svelte-f980dcce.js")
 				],
 				url: new URL("http://sveltekit-prerender/svelte-cyberComp/guide/tabs"),
 				params: {}

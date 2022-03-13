@@ -16,8 +16,5 @@
 			<span class="ps-2">Events:</span>
 			<span class="badge bg-dark">pageChanged</span>
 		</p>
-		<p>
-			<span class="ps-2">class prop: <i class="fas fa-times"></i></span>
-		</p>
 	</div>
 </div>

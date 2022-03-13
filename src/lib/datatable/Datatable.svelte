@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+	export const dataTableKey = {name:"datatable"};
+</script>
+
 <script lang="ts">
 	type T = $$Generic
 
@@ -10,14 +14,16 @@
 	export let paginate: boolean = false;
 	export let perPage: number = 25;
 	export let lookupPages: number = null;
+	export let currentPage: number = 1;
 
-	let currentPage: number = 1;
-	
 	let dispatcher = createEventDispatcher();
 	let sortReversed: boolean = false;
 
+	$: items = sortItems(items, $selectedHeader)
+
 	const selectedHeader = writable<ITableHeader<T>>({
 		sort: undefined,
+		additionalSorts: [],
 		sortReversed: false,
 		sortBy: ""
 	});
@@ -26,34 +32,42 @@
 		perPage = items.length;
 	}
 
-	setContext<TableContext<T>>("dataTableKey", {
+	setContext<TableContext<T>>(dataTableKey, {
 		selectHeader: header => {
 			if($selectedHeader != header || $selectedHeader.sortReversed != sortReversed){
-				if(header.sort != undefined){
-					items.sort(header.sort);
-
-					if(header.sortReversed){
-						items.reverse();
-					}
-					items = items;
-				}
-
 				sortReversed = header.sortReversed;
+				$selectedHeader = header;
 
-				dispatcher("sort", {
-					sort: header.sort,
-					sortReversed: header.sortReversed,
-					sortBy: header.sortBy
-				});
+				dispatcher("sort", header);
 			}
-
-			$selectedHeader = header;
 		},
 		selectedHeader
 	});
+
+	function sortItems(i: T[], header: ITableHeader<T>){
+		if(header.sort != undefined){
+			var order: number = 1;
+			if(header.sortReversed) order = -1;
+
+			i.sort((a,b) => {
+				var result: number = header.sort(a,b) * order;
+
+				if(result == 0){
+					for(let s of header.additionalSorts){
+						let result2 = s(a,b);
+						if(result2 != 0){result = result2; break;}
+					}
+				}
+
+				return result;
+			})
+		}
+
+		return i;
+	}
 </script>
 
-<table class={$$props.class}>
+<table class={$$props.class || ''}>
 	<thead>
 		<slot name="header"></slot>
 	</thead>

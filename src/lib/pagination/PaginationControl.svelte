@@ -4,7 +4,7 @@
 		type: number
 	}
 
-	import { createEventDispatcher, onMount, afterUpdate } from "svelte";
+	import { createEventDispatcher, afterUpdate } from "svelte";
 
 	export let numberItems: number;
 	export let perPage: number = 10;
@@ -26,6 +26,10 @@
 	function generateButtons(items: number, perPage: number){
 		var result: Btn[] = [];
 
+		if(perPage <= 0){
+			perPage = 1;
+		}
+
 		for(var i = 0; i < Math.ceil(items / perPage); i++){
 			result.push({pageID: i + 1, type: 2});
 		}
@@ -46,13 +50,21 @@
 	}
 
 	function filterBtn(btns: Btn[]){
-		if(lookupPages != null){
+		let pos = currentPage;
+
+		if(currentPage < 3){
+			pos = 3;
+		}else if(currentPage > (btns.length -2)){
+			pos = btns.length - 2;
+		}
+
+		if(lookupPages != null && btns.length > ((lookupPages*2) + 9)){
 			return buttons.map(btn => {
-				if(btn.pageID < lookupPages + 2 || btn.pageID > btns.length - lookupPages || (btn.pageID >= currentPage - lookupPages && btn.pageID <= currentPage + lookupPages)){
+				if(btn.pageID < 3 || btn.pageID > btns.length - 2){
 					btn.type = 2
-				}else if(currentPage <= lookupPages && btn.pageID == lookupPages + 2){
-					btn.type = 1;
-				}else if(currentPage > 1 && (btn.pageID == currentPage - lookupPages-1 || btn.pageID == currentPage + lookupPages+1)){
+				}else if(btn.pageID >= pos - lookupPages && btn.pageID <= pos + lookupPages){
+					btn.type = 2;
+				}else if(btn.pageID == pos - lookupPages-1 || btn.pageID == pos + lookupPages+1){
 					btn.type = 1;
 				}else{
 					btn.type = 0;

@@ -10,45 +10,48 @@
 		<link rel="stylesheet" href="/svelte-cyberComp/css/style.css" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content=""><title>Svelte Cyber Comp - Accordion</title>
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-65a82e62.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-dfa3ad67.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/accordion.svelte-3da37d06.js">
-	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/Counter-73405223.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/start-d25908a3.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/vendor-cb8b768f.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/pages/guide/accordion.svelte-9e3f7b38.js">
+	<link rel="modulepreload" href="/svelte-cyberComp/_app/chunks/Counter-7062ce85.js">
 	</head>
 	<body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/svelte-cyberComp/">Svelte-cyberComp</a>
-		<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/guide">Guide</a></li>
-			<li class="nav-item dropdown"><p class="nav-link dropdown-toggle">Docs</p>
-				<ul class="dropdown-menu"><li><a class="dropdown-item" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/datatable">DataTable</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
-					<li><a class="dropdown-item" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></li>
-			<li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/changes">Release Notes</a></li></ul>
+<nav class="navbar navbar-expand-md navbar-light bg-light"><div class="container-fluid"><a class="navbar-brand" href="/svelte-cyberComp/">Svelte-cyberComp</a>
+		<div class="collapse navbar-collapse"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/guide">Guide</a></li>
+				<li class="nav-item dropdown"><p class="nav-link dropdown-toggle" role="button">Docs</p>
+					<ul class="dropdown-menu"><li><a class="dropdown-item" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/datatable">DataTable</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+						<li><a class="dropdown-item" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></li>
+				<li class="nav-item"><a class="nav-link" href="/svelte-cyberComp/changes">Release Notes</a></li></ul></div>
 		<div><a class="link" target="_blank" href="https://github.com/Cybersteam00/svelte-cyberComp">Github
 				<img src="/svelte-cyberComp/image/github.svg" alt="github" height="16"></a>
 			<a class="link" href="https://github.com/Cybersteam00/svelte-cyberComp/issues" target="_blank">Report issue
-			</a></div></div></nav>
-<main><div class="grid-guide"><aside><nav class="docs-nav"><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide">Getting Startet</a></li>
-				<li><button type="button" class="btn side-btn" aria-expanded="false"><i class="fas fa-chevron-down"></i>Components</button>
-					<div class="collapse "><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/datatable">Datatable</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
-							<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
-	<div class="p-4">
+			</a></div>
+		<button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button></div></nav>
+<main><div class="container-fluid"><div class="row"><aside class="col-md-auto docs-aside"><button class="btn btn-dark position-absolute d-block d-md-none start-100"><i class="fas fa-angle-double-right"></i></button>
+			<nav class="docs-nav"><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide">Getting Startet</a></li>
+					<li><a class="link" href="/svelte-cyberComp/guide/testdata">About Testdata</a></li>
+					<li><button type="button" class="btn side-btn" aria-expanded="false"><i class="fas fa-chevron-down"></i>Components</button>
+						<div class="collapse "><ul class="list-unstyled"><li><a class="link" href="/svelte-cyberComp/guide/accordion">Accordion</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/datatable">Datatable</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/pagination">Pagination</a></li>
+								<li><a class="link" href="/svelte-cyberComp/guide/tabs">Tabs</a></li></ul></div></li></ul></nav></aside>
+		<div class="col p-4">
 
 <h1>Accordion</h1>
-<div class="overview"><div><p class="h5">Components</p>
+<div class="row"><div class="col-12 col-lg-6"><p class="h5">Components</p>
 		<div class="d-flex"><div class="card"><div class="card-header text-white bg-primary">Accordion</div>
 				<div class="card-body"><p><span class="ps-2">Attributes:</span>
-						<span class="badge bg-secondary">alwaysOpen</span>
-						<span class="badge bg-secondary">animate</span></p>
-					<p><span class="ps-2">Events:</span>
-						<span class="badge bg-dark">toggle</span></p>
-					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div>
+						<span class="badge bg-secondary">alwaysOpen</span></p>
+					<p><span class="ps-2">Functions:</span>
+						<span class="badge bg-dark">open</span>
+						<span class="badge bg-dark">close</span></p>
+					<p><span class="ps-2">$$props: class</span></p></div></div>
 			<div class="card"><div class="card-header text-white bg-primary">AccordionItem</div>
 				<div class="card-body"><p><span class="ps-2">Attributes:</span>
 						<span class="badge bg-secondary">active</span>
@@ -58,8 +61,11 @@
 					<p><span class="ps-2">Slots:</span>
 						<span class="badge bg-success">header</span>
 						<span class="badge bg-success">body</span></p>
-					<p><span class="ps-2">class prop: <i class="fas fa-check"></i></span></p></div></div></div></div>
-	<div><p class="h5">Internal css classes</p>
+					<p><span class="ps-2">Events:</span>
+						<span class="badge bg-dark">open</span>
+						<span class="badge bg-dark">close</span></p>
+					<p><span class="ps-2">$$props: class</span></p></div></div></div></div>
+	<div class="col-12 col-lg-6"><p class="h5">Internal css classes</p>
 		<div class="d-flex"><div class="card"><div class="card-header text-white bg-primary">AccordionItem</div>
 				<div class="card-body"><ul><li>active, disabled</li>
 						<ul><li>accordion-header</li></ul>
@@ -67,25 +73,25 @@
 
 <hr>
 <p class="h3">Default Accordion</p>
-<p>The default Accordion loads all content and only one AccordionItem is active. Disabled Accordions won&#39;t be activated, but their content will be loaded regardless.</p>
+<p>The default Accordion loads all content and only one AccordionItem can be active at a time. Disabled Items won&#39;t be activated, but their content will be loaded regardless.</p>
 <div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 1</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 1</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #2
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 2</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 2</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #3
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 	<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #4 (Disabled)
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div>
 
@@ -112,7 +118,7 @@
 
 <hr>
 
-<p>It&#39;s also possible to preselect an Item.</p>
+<p>It&#39;s also possible to preselect an Item with <code>active</code>.</p>
 <div class="accordion"><div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 			</button></div></div>
 	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><p>Body 1</p>
@@ -120,17 +126,17 @@
 <p>0</p></div></div></div>
 	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #2
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 2</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 2</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #3
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 	<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #4 (Disabled)
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 			<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div>
 
@@ -157,28 +163,28 @@
 <hr>
 
 <p>To have multiple AccordionItems active, add <code>allwasOpen</code> to <code>Accordion</code>.</p>
-<div class="grid-dualPagination custom-pageControl-el"><div><p>Default</p>
+<div class="row"><div class="col-12 col-lg-6"><b>Default</b>
 		<div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 1</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 1</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #2
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 2</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 2</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #3
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #4 (Disabled)
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div></div>
-	<div><p>Preselect</p>
+	<div class="col-12 col-lg-6"><b>Preselect</b>
 		<div class="accordion"><div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 					</button></div></div>
 	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><p>Body 1</p>
@@ -191,12 +197,12 @@
 <p>0</p></div></div></div>
 			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #3
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #4 (Disabled)
 					</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 					<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div></div></div>
 
@@ -217,18 +223,37 @@
 <p class="h3">Lazyload and Persistence</p>
 <p>It&#39;s possible to lazyload Accordion Content by adding <code>lazy</code> to <code>AccordionItem</code>.</p>
 <p>Keep in mind the content will be loaded every time the item is activated. To only load it once, add <code>loadOnce</code>.</p>
-<div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #1
-			</button></div></div>
-	<div class="accordion-collapse collapse"></div></div>
-	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
-			</button></div></div>
-	<div class="accordion-collapse collapse"></div></div>
-	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
-			</button></div></div>
-	<div class="accordion-collapse collapse"></div></div>
-	<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
-			</button></div></div>
-	<div class="accordion-collapse collapse"></div></div></div>
+
+<div class="row"><div class="col-12 col-lg-6"><b>Regular</b>
+		<div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #1
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div></div></div>
+	<div class="col-12 col-lg-6"><b>Alwasy open</b>
+		<div class="accordion"><div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #1
+					</button></div></div>
+	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><p>Body 1</p>
+					<button type="button" class="btn btn-dark">Increase</button>
+<p>0</p></div></div></div>
+			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+			<div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
+					</button></div></div>
+	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><p>Body 3</p>
+					<button type="button" class="btn btn-dark">Increase</button>
+<p>0</p></div></div></div>
+			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
+					</button></div></div>
+	<div class="accordion-collapse collapse "></div></div></div></div></div>
 
 <div class="highlight"><pre class="chroma"><code>
 &lt;Accordion&gt;
@@ -253,102 +278,50 @@
 
 <hr>
 
-<p class="h3">Animation</p>
-<p>Since these Components are build with svelte, it&#39;s possible to use svelte-animation to slide your items in and out. Or use other animations. Additionaly to the animation, <code>Accordion</code> needs <code>animate</code> in order for them to work propertly.</p>
-<p class="alert alert-info">NOTE: Adding animation automaticly makes your content lazyLoaded, since they need to be destroyed and reinitialized in order for the animations to work. Therefore svelte-animation on <code>loadOnce</code> items only work once.</p>
-<div class="grid-dualPagination custom-pageControl-el"><div><p>Default</p>
-		<div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div>
-			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div>
-			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
-					</button></div></div>
-	<div class="accordion-collapse collapse"></div></div>
-			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div></div></div>
-	<div><p>Always Open</p>
-		<div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div>
-			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div>
-			<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
-					</button></div></div>
-	<div class="accordion-collapse collapse"></div></div>
-			<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
-					</button></div></div>
-	<div class="accordion-collapse collapse show"></div></div></div></div></div>
-
-<div class="highlight"><pre class="chroma"><code>
-&lt;Accordion animate&gt;
-	&lt;AccordionItem&gt;
-		&lt;div slot=&quot;header&quot;&gt;
-			...
-		&lt;/div&gt;
-		&lt;div slot=&quot;body&quot; transition:slide&gt;
-			...
-		&lt;/div&gt;
-	&lt;/AccordionItem&gt;
-	&lt;AccordionItem lazy loadOnce&gt;
-		&lt;div slot=&quot;header&quot;&gt;
-			...
-		&lt;/div&gt;
-		&lt;div slot=&quot;body&quot; transition:slide&gt;
-			...
-		&lt;/div&gt;
-	&lt;/AccordionItem&gt;
-&lt;/Accordion&gt;</code></pre></div>
-
-<hr>
-
 <p class="h3">Nested Accordions</p>
 <p>If neccessary, Accordions can be nested.</p>
 <div class="accordion"><div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 			</button></div></div>
 	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Nested Accordion Item #1
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 1</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 1</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Nested Accordion Item #2
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 2</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 2</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Nested Accordion Item #3
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Nested Accordion Item #4 (Disabled)
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div></div></div></div>
 	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #2
 			</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><div class="accordion"><div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 1</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 1</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #2
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 2</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 2</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #3 (persistend)
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 3</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 3</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div>
 				<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #4 (Disabled)
 						</button></div></div>
-	<div class="accordion-collapse collapse"><div class="accordion-body" slot="body"><p>Body 4</p>
+	<div class="accordion-collapse collapse "><div class="accordion-body" slot="body"><p>Body 4</p>
 						<button type="button" class="btn btn-dark">Increase</button>
 <p>0</p></div></div></div></div></div></div></div></div>
 
@@ -389,14 +362,50 @@
 		&lt;/div&gt;
 	&lt;/AccordionItem&gt;
 	...
-&lt;/Accordion&gt;</code></pre></div></div></div></main>
+&lt;/Accordion&gt;</code></pre></div>
+
+<hr>
+
+<p class="h3">Open and close via buttons</p>
+<p>If so desired, AccordionItems can be opened and closed via script with <code>open()</code> and <code>close()</code>. The number indicates which Item will be opened / closed</p>
+<div class="accordion"><div class="accordion-item  active"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Accordion Item #1
+			</button></div></div>
+	<div class="accordion-collapse collapse show"><div class="accordion-body" slot="body"><p>Body 1</p>
+			<button type="button" class="btn btn-dark">Increase</button>
+<p>0</p>
+			<button type="button" class="btn btn-dark">Close #1</button>
+			<button type="button" class="btn btn-dark">Open #2</button></div></div></div>
+	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #2
+			</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+	<div class="accordion-item"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #3 (persistend)
+			</button></div></div>
+	<div class="accordion-collapse collapse "></div></div>
+	<div class="accordion-item disabled"><div class="accordion-header"><div slot="header"><button class="accordion-button" type="button">Lazy Accordion Item #4 (Disabled)
+			</button></div></div>
+	<div class="accordion-collapse collapse "></div></div></div>
+
+<div class="highlight"><pre class="chroma"><code>
+let accordion
+&lt;Accordion bind:this={accordion}&gt;
+	&lt;AccordionItem lazy&gt;
+		&lt;div slot=&quot;body&quot;&gt;
+			&lt;button on:click={() =&gt; {accordion.open(2)}}&gt;&lt;/button&gt;
+			...
+		&lt;/div&gt;
+	&lt;/AccordionItem&gt;
+	&lt;AccordionItem lazy loadOnce&gt;
+		...
+	&lt;/AccordionItem&gt;
+	...
+&lt;/Accordion&gt;</code></pre></div></div></div></div></main>
 
 
 
-		<script type="module" data-hydrate="1tjzznp">
-		import { start } from "/svelte-cyberComp/_app/start-65a82e62.js";
+		<script type="module" data-hydrate="1ud8e3w">
+		import { start } from "/svelte-cyberComp/_app/start-d25908a3.js";
 		start({
-			target: document.querySelector('[data-hydrate="1tjzznp"]').parentNode,
+			target: document.querySelector('[data-hydrate="1ud8e3w"]').parentNode,
 			paths: {"base":"/svelte-cyberComp","assets":"/svelte-cyberComp"},
 			session: {},
 			route: true,
@@ -406,9 +415,9 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/svelte-cyberComp/_app/pages/__layout.svelte-c743148d.js"),
-						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-67a81478.js"),
-						import("/svelte-cyberComp/_app/pages/guide/accordion.svelte-3da37d06.js")
+					import("/svelte-cyberComp/_app/pages/__layout.svelte-201781bc.js"),
+						import("/svelte-cyberComp/_app/pages/guide/__layout.svelte-a91c4636.js"),
+						import("/svelte-cyberComp/_app/pages/guide/accordion.svelte-9e3f7b38.js")
 				],
 				url: new URL("http://sveltekit-prerender/svelte-cyberComp/guide/accordion"),
 				params: {}

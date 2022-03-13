@@ -8,7 +8,7 @@ nav.navbar{
 	border-bottom: solid 1px black;
 }
 
-.navbar.navbar-expand-lg{
+.navbar.navbar-expand-md{
 	position: sticky !important;
 	top: 0;
 	z-index: 10;
@@ -43,19 +43,13 @@ nav.navbar{
 	background-color: #f8f9fa;
 }
 
-.grid-quickstart{
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: 1fr 1fr;
-}
-
-.grid-quickstart > *{
+.quickstart{
 	border-radius: 5px;
 	padding: 1rem;
 	border: solid 1px #e0e0e0;
 }
 
-.grid-quickstart > .bordered{
+.quickstart.bordered{
 	border: solid 1px #c0c0c0;
 }
 
@@ -122,11 +116,6 @@ a.card-body:hover{
 	grid-template-areas: 'control''datatable';
 }
 
-.grid-guide{
-	display: grid;
-	grid-template-columns: auto 1fr;
-}
-
 .overview{
 	display: grid;
 	grid-gap: .5rem;
@@ -149,8 +138,9 @@ a.card-body:hover{
 	content: '\f061';
 }
 
-.compactSortIcons .sort-icons > *{
-	display: block;
+.compactSortIcons .sort-icons{
+	flex-direction: column;
+	gap: 0;
 }
 
 .compactSortIcons .fa-arrow-up::before{
@@ -163,4 +153,56 @@ a.card-body:hover{
 
 .compactSortIcons .fa-arrow-down{
 	content: 'f0d8';
+}
+
+.navbar-collapse{
+	justify-content: center;
+}
+
+.sort-icons{
+	display: flex;
+	gap: .25rem;
+}
+
+.input-radio{
+	display: flex;
+}
+
+@media screen and (max-width: 767px) {
+	.docs-aside{
+		position: fixed;
+		left: 0;
+		max-width: 0;
+		padding: 0;
+		background-color: var(--bs-body-bg);
+		border: solid 1px var(--bs-body-color);
+		z-index: 100;
+	}
+
+	.docs-aside.navExpanded{
+		max-width: 250px;
+	}
+
+	.docs-nav{
+		display: none;
+	}
+
+	.docs-nav.navExpanded{
+		display: block;
+	}
+
+	.navbar-collapse{
+		order: 4;
+	}
+
+	.custom-pageControl-el .pagination-control{
+		display: block;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.grid-guide{
+		display: grid;
+		grid-template-columns: auto 1fr;
+	}
 }
