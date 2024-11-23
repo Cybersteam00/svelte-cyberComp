@@ -1,3 +1,5 @@
+### Project has been arcived, since I didn't do any development on this. It may be deleted in the future
+
 # Svelte-cyberComp
 powerfull, lightweight Svelte Components writen in Svelte and Typescript
 
